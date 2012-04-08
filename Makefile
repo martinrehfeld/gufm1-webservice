@@ -1,10 +1,19 @@
-all: gufm
+CFLAGS=-c
+LDFLAGS=-L$(F2CLIB_DIR) -lf2c -lm
 
-gufm: gufm.c
-	cc -o gufm gufm.c -lf2c
+EXECUTABLE=gufm
+SOURCES=gufm.f
+OBJECTS=$(SOURCES:.f=.o)
+INTERMEDIATES=$(SOURCES:.f=.c)
 
-gufm.c: gufm.f
-	f2c gufm.f
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@ $(LDFLAGS)
+
+.f.o:
+	f2c $<
+	$(CC) $(CFLAGS) $(<:.f=.c) -o $@
 
 clean:
-	rm -f gufm gufm.c
+	rm -f $(EXECUTABLE) $(OBJECTS) $(INTERMEDIATES)
