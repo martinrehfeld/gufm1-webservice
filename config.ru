@@ -1,4 +1,4 @@
-$:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__))
+$:.unshift(File.join(File.dirname(__FILE__), 'lib')) unless $:.include?(File.join(File.dirname(__FILE__), 'lib'))
 $stdout.sync = true
 
 require 'webservice'
