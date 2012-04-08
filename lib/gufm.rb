@@ -39,7 +39,7 @@ class Gufm
 
     results = { 'lat' => latitude, 'lng' => longitude }
     results.merge!(Hash[labels.zip(values)])
-    results['Year'] = year # make sure 'Year' is an Integer
+    results['year'] = year # make sure 'year' is an Integer
 
     results.as_json(options)
   end
