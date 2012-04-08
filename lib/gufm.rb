@@ -37,7 +37,11 @@ class Gufm
     }
     values = output[-1].strip.split(/\s+/).map(&:to_f)
 
-    Hash[labels.zip(values)].as_json(options)
+    results = Hash[labels.zip(values)]
+    results['Year'] = year # make sure 'Year' is an Integer
+    results['Latitude'] = latitude
+    results['Longitude'] = longitude
+    results.as_json(options)
   end
 
 end
