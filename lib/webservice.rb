@@ -1,10 +1,15 @@
 require 'sinatra/base'
+require 'gufm'
 
 class Webservice < Sinatra::Application
 
-  get '/' do
+  before do
     content_type :json
-    '{"lang":"F-77", "status":"WIP"}'
+  end
+
+  get '/' do
+    lat, lng, year = params[:lat], params[:lng], params[:year]
+    ActiveSupport::JSON.encode Gufm.new.query(lat, lng, year)
   end
 
 end
