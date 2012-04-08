@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.2.3)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
     addressable (2.2.7)
     daemons (1.1.8)
     eventmachine (0.12.10)
@@ -11,9 +14,11 @@ GEM
       netrc (~> 0.7.1)
       rest-client (~> 1.6.1)
       rubyzip
+    i18n (0.6.0)
     launchy (2.1.0)
       addressable (~> 2.2.6)
     mime-types (1.18)
+    multi_json (1.2.0)
     netrc (0.7.1)
     rack (1.4.1)
     rack-protection (1.2.0)
@@ -37,6 +42,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   foreman
   heroku
   rake
