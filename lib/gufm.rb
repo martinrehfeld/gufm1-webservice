@@ -33,11 +33,11 @@ class Gufm
 
   def as_json(options = nil)
     labels = output[-2].strip.split(/\s+/).map { |label|
-      label == 'Jahr' ? 'Year' : label.sub(/Grad/, 'Degrees')
+      label == 'Jahr' ? 'year' : label.sub(/\(.+?\)/, '')
     }
     values = output[-1].strip.split(/\s+/).map(&:to_f)
 
-    results = { 'Latitude' => latitude, 'Longitude' => longitude }
+    results = { 'lat' => latitude, 'lng' => longitude }
     results.merge!(Hash[labels.zip(values)])
     results['Year'] = year # make sure 'Year' is an Integer
 
