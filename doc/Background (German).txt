@@ -1,0 +1,61 @@
+Von: Monika Korte <monika@gfz-potsdam.de>
+Datum: 21. März 2012 11:31
+Betreff: Re: Deklinationswerte vor 1900
+An: Sanna Rehfeld <sanna.rehfeld@focus-fengshui.de>
+
+
+Sehr geehrte Frau Rehfeld,
+
+im Anhang finden Sie Material, mit dem Sie sich Deklinationswerte vor
+1900 berechnen können. Das "gufm" Modell ist ähnlich dem in unserem
+online-Rechner verwendeten IGRF Modell eine weltweite Beschreibung des
+Magnetfelds, aus dem sich für jeden Ort der Erde die Deklination und
+andere Magnetfeldkomponenten berechnen lassen. Es beruht auf modernen
+und historischen Messwerten und ist gültig für den Zeitraum 1590 bis
+1990. Die Quellenangabe dazu ist der ebenfalls anhängende Artikel von
+Andrew Jackson und Mitarbeitern aus dem Jahr 2000.
+
+Das Programm zur Berechnung von Feldwerten aus der eigentlichen
+Modelldatei "gufm1" ist leider ein recht altmodisch programmiertes und
+schlecht dokumentiertes Fortran-Programm. Die Datei "gufm.f" enthält
+das Hauptprogramm und alle nötigen Subroutinen. Auf Linux-Systemen
+sollte es sich problemlos mit f77 oder Fortran95 kompilieren und dann
+anwenden lassen. Ich hoffe, dass es auch unter Windows geht, damit
+habe ich aber keine Erfahrung.
+
+Das Programm ist im wesentlichen das von den Autoren des Artikels
+bereitgestellte (und zur Weitergabe freigegebene) Beispielprogramm,
+das ich schon etwas geändert habe, so dass es in der jetzigen Form die
+Eingabe des gewünschten Ortes als geographische Breite und Länge sowie
+den gewünschten Zeitpunkt als Jahr abfragt. Soweit ich Sie verstanden
+habe, sind Sie an Werten für einzelne Zeitpunkte interessiert, im
+Programm ist die Möglichkeit, eine ganze Zeitreihe für einen Ort zu
+erhalten einfach nur auskommentiert. Das Jahr kann als Dezimalzahl
+eingegeben werden, doch möchte ich auch darauf hinweisen, dass die
+Genauigkeit der historischen Deklination wahrscheinlich nicht besser
+als etwa ein halbes bis ein Grad beträgt. Sie werden das auch merken,
+wenn Sie z. B. Werte für den gleichen Ort und Zeitpunkt im 20.
+Jahrhundert aus dem gufm Modell sowie aus dem IGRF Modell berechnen -
+die Werte sind nicht exakt gleich. Die Unterschiede geben einen guten
+Anhaltspunkt für die Unsicherheit in den Modellen, die aber für Ihre
+Anwendung hoffentlich doch vernachlässigbar klein sind.
+
+Ich hoffe, das hilft Ihnen weiter.
+
+Mit freundlichen Grüßen,
+Monika Korte
+
+
+
+--
+Dr. Monika Korte
+Sektion 2.3, Erdmagnetfeld
+Tel.: +49 (0)331/288-1268
+Fax: +49 (0)331/288-1235
+Email: monika@gfz-potsdam.de
+___________________________________
+
+Helmholtz-Zentrum Potsdam
+Deutsches GeoForschungsZentrum - GFZ
+Stiftung des öff. Rechts Land Brandenburg
+Telegrafenberg, D-14473 Potsdam
