@@ -1,5 +1,5 @@
-CFLAGS=-c
-LDFLAGS=-L$(F2CLIB_DIR) -lf2c -lm
+CFLAGS=-no-pie -c
+LDFLAGS= -L$(F2CLIB_DIR) -lf2c -lm
 
 EXECUTABLE=gufm
 SOURCES=gufm.f
@@ -9,7 +9,7 @@ INTERMEDIATES=$(SOURCES:.f=.c)
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@ $(LDFLAGS)
+	$(CC) -no-pie $(OBJECTS) -o $@ $(LDFLAGS)
 
 .f.o:
 	f2c $<
