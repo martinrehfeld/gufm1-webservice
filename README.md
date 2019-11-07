@@ -23,6 +23,6 @@ This webservice can be deployed to Heroku using the
 [Fortran buildpack](https://github.com/martinrehfeld/heroku-buildpack-f77).
 
 If you would like to play with this a bit, I have the service deployed at
-[gufm.herokuapp.com](gufm.herokuapp.com/?lat=52.452701&lng=13.232689&year=1900)
+(gufm.herokuapp.com)[https://gufm.herokuapp.com/?lat=52.452701&lng=13.232689&year=1900]
 (the given link has arguments of an example query for Berlin, Germany in the
 year 1900).
